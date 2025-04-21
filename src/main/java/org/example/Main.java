@@ -1,8 +1,5 @@
 package org.example;
-import clasesOsiris.clasePrincipaPruebas;
-import clasesOsiris.clasePrincipalPruebas3;
-import clasesOsiris.clasePrincipalEnum;
-import clasesOsiris.getANDset;
+import clasesOsiris.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,34 +13,38 @@ import java.util.Properties;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws IOException {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        //Escribir un print en consola
+        System.out.println("Mi primer print!");
+        System.out.println("****************************************");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        //Instanciación de una clase estandar a utilizar
+        claseEstandar insClaseEstandar = new claseEstandar();
+        insClaseEstandar.primerMetodoEstandar();
+        System.out.println("****************************************");
 
-        }
+        //Esta es la clase static la cual no necesita instanciacion
+        claseStatic.primerMetodoClaseStatic();
+        System.out.println("****************************************");
 
-        //Esta clase al ser estática me permite llamarla directamente, pero dentro de la clase correspondiente.
-        clasePrincipaPruebas.devolverNumero3();
-        clasePrincipaPruebas.devolverNumero4();
-        clasePrincipaPruebas.consultasVarias();
-        clasePrincipalPruebas3 objetoInterfaz = new clasePrincipalPruebas3();
+        //Instanciacion de una interfaz
+        System.out.println("Se comienza con la utilización de la interfaz");
+        claseUtilizarInterfaces objetoInterfaz = new claseUtilizarInterfaces();
 
-        /*Esta es la utilización de una interfaz*/
+        /*Utilización de una interfaz*/
         objetoInterfaz.metodoInterfaz1();
-
-        /*Esta es la forma de instanciar una propiedad si quieres utilizarla*/
-        System.setProperty("variableOsirisProperty", "valorOsirisProperty");
-        System.out.println("El valor de la propiedad es " + System.getProperty("variableOsirisProperty"));
+        System.out.println("Se muestra el valor del segundo metodo al llamarlo "+objetoInterfaz.metodoInterfaz2());
+        System.out.println("Se muestra el valor del cuarto metodo, que no está como obligatorio en la interfaz "+objetoInterfaz.metodoInterfaz4());
+        System.out.println("****************************************");
 
         /*Utilización e instanciación de la clase Enum*/
         clasePrincipalEnum valorEnum1 = clasePrincipalEnum.miValorEnum1;
         clasePrincipalEnum valorEnum2 = clasePrincipalEnum.miValorEnum2;
         System.out.println("Los valores de los enums son: "+valorEnum1+ " y "+valorEnum2);
+
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /*Esta es la forma de instanciar una propiedad si quieres utilizarla*/
+        System.setProperty("variableOsirisProperty", "valorOsirisProperty");
+        System.out.println("El valor de la propiedad es " + System.getProperty("variableOsirisProperty"));
 
         /*Utilización de getters y setters*/
         getANDset objectGetandSet = new getANDset("Saco");
