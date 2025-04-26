@@ -1,4 +1,4 @@
-package clasesOsiris;
+package clasesUtils;
 
 public class getANDset {
     private String nombregetANDset1;

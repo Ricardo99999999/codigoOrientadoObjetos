@@ -1,4 +1,4 @@
-package clasesOsiris;
+package clasesUtils;
 
 public enum clasePrincipalEnum {
     miValorEnum1,

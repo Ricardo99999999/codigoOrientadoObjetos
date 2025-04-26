@@ -1,7 +1,6 @@
 package org.example;
-import clasesOsiris.*;
+import clasesUtils.*;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -40,17 +39,21 @@ public class Main {
         clasePrincipalEnum valorEnum1 = clasePrincipalEnum.miValorEnum1;
         clasePrincipalEnum valorEnum2 = clasePrincipalEnum.miValorEnum2;
         System.out.println("Los valores de los enums son: "+valorEnum1+ " y "+valorEnum2);
-
-        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        /*Esta es la forma de instanciar una propiedad si quieres utilizarla*/
-        System.setProperty("variableOsirisProperty", "valorOsirisProperty");
-        System.out.println("El valor de la propiedad es " + System.getProperty("variableOsirisProperty"));
+        System.out.println("****************************************");
 
         /*Utilización de getters y setters*/
+        System.out.println("Comienzo de getters and setters");
         getANDset objectGetandSet = new getANDset("Saco");
         objectGetandSet.setNombregetANDset1("Sasori");
         //Finalmente ponemos uno que esté OK
         objectGetandSet.setNombregetANDset1("Paco");
+        System.out.println("****************************************");
+
+        /*Esta es la forma de instanciar una propiedad si quieres utilizarla*/
+        System.setProperty("variableOsirisProperty", "valorOsirisProperty");
+        System.setProperty("variableProperty", "valorProperty");
+        System.out.println("El valor de la propiedad es " + System.getProperty("variableProperty"));
+        System.out.println("****************************************");
 
         /*Utilización de properties.
         * Crear un archivo .properties que debe de estar obligatoriamente en la carpeta del classpath

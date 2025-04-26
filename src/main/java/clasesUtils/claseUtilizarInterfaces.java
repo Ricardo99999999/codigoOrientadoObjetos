@@ -1,4 +1,4 @@
-package clasesOsiris;
+package clasesUtils;
 
 public class claseUtilizarInterfaces implements claseInterfaces{
     @Override
